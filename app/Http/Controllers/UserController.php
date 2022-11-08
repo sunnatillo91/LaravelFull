@@ -8,11 +8,17 @@ class UserController extends Controller
 {
     public function index()
     {
-        return "Bu userlarni ro'yxati";
+        // return response("Bu userlarni ro'yxati", 201);
+        return response()->json([
+            'name' => 'Abcd',
+            'state' => 'JA',
+        ]);
     }
 
     public function show($user)
     {
+        // dd($request->ip());
+
         $user += 1000;
         // return "Tanlangan user: ". $user;
         // return view('users.show')->with(['name' => 'Sunnatillo', 'id' => $user]);
@@ -28,5 +34,15 @@ class UserController extends Controller
 
     public function edit($user_id) {
         return $user_id . 'ni o\'zgartirish';
+    }
+
+    public function store(Request $request) {
+        dd($request->name);
+        // return response()->download($pathToFile);
+        // if($request->has('name')) {
+        //     echo 'OK';
+        // } else {
+        //     echo 'NO';
+        // }
     }
 }

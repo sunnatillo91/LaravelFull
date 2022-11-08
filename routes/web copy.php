@@ -69,3 +69,5 @@ Route::prefix('admin')->group(function() {
 
     Route::view('test-new', 'test');
 });
+
+Route::view('salom', 'salom');
