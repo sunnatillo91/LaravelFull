@@ -17,8 +17,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [PageController::class, 'main']);
+
 Route::get('/welcome', [PageController::class, 'welcome']);
+
 Route::view('salom', 'salom');
 Route::get('about', [PageController::class, 'about'])->name('about');
 Route::get('services', [PageController::class, 'services'])->name('services');
@@ -35,6 +36,7 @@ Route::get('contact', [PageController::class, 'contact'])->name('contact');
 
 Route::resource('posts', PostController::class);
 
+// Route::get('users', [UserController::class, 'name']);Route::get('/', [PageController::class, 'main']);
 
 
 

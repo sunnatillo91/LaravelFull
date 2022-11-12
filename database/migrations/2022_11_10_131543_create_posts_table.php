@@ -17,9 +17,10 @@ return new class extends Migration
             $table->id();
             $table->text('title');
             $table->text('content');
-            $table->text('short_content');
-            $table->string('photo');
+            $table->text('short_content')->nullable();
+            $table->string('photo')->default('/avatar.png');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
@@ -30,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('posts');
+        Schema::dropIfExists('postlar');
     }
 };

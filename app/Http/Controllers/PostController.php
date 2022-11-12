@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -13,6 +14,52 @@ class PostController extends Controller
      */
     public function index()
     {
+        // $newPost = new Post;
+        // $newPost->title = 'new post';
+        // $newPost->content = 'new post content';
+        // $newPost->short_content = 'new post short content';
+        // $newPost->photo = '/storage/new_post.png';
+        // $newPost->save();
+
+        // $newPost = Post::create([
+        //     'title' => 'new post',
+        //     'content' => 'new post content',
+        //     'short_content' => 'new post short content',
+        //     'photo' => 'photo.png'
+        // ]);
+
+        // $post = Post::find(3);
+        // $post->title = "O'zgartirilgan sarlavha";      
+        // $post->save();                              //1-usul 
+
+        // $post = Post::find(3)->update(['title' => 'yangi sarlavha']);  //2-usul
+
+        // $post = Post::where('id', 8)->first();
+        // $post->delete();
+
+        Post::withTrashed()->find(3)->restore();
+
+        $posts = Post::all();
+
+        dd($posts);
+
+        return 'deleted';
+
+
+        // $posts = Post::all();
+        // $posts = Post::where('content', 'SXAx')->first();
+
+        // $post = Post::find(1);
+
+        // $posts = Post::firstOrCreate(
+        //     ['title' => 'London to Paris'],
+        //     ['id' => 1, 'content' => '11:30', 'short_content' => 'jgff'],
+        //     ['photo' => 'nab']
+        // );
+
+        // dd($posts);
+
+
         return view('posts.index');
     }
 

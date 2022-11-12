@@ -13,9 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        // Schema::table('posts', function (Blueprint $table) {
-        //     $table->boolean('photo')->change();
-        // });
+        Schema::create('comments', function (Blueprint $table) {
+            $table->id();
+            $table->timestamps();
+        });
     }
 
     /**
@@ -25,8 +26,6 @@ return new class extends Migration
      */
     public function down()
     {
-        // Schema::table('posts', function (Blueprint $table) {
-        //     $table->string('photo')->change();
-        // });
+        Schema::dropIfExists('comments');
     }
 };
