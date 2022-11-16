@@ -50,9 +50,8 @@ class PostController extends Controller
     public function show(Post $post)
     {
         return view('posts.show')->with([
-            
-            'post', $post,
-            'recent_posts' => Post::latest()->get()->except($post->id)->take(5)
+            'post' => $post,
+            'recent_posts' => Post::latest()->get()->except($post->id)->take(3)
         ]);
     }
 

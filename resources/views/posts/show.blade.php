@@ -1,7 +1,7 @@
 <x-layouts.main>
 
     <x-slot:title>
-        Title
+        Post - {{ $post->id }}
     </x-slot:title>
 
     <x-page-header>
@@ -43,7 +43,28 @@
                                 <button class="btn btn-sm btn-light">Reply</button>
                             </div>
                         </div>
-
+                        <div class="media mb-4">
+                            <img src="/img/user.jpg" alt="Image" class="img-fluid rounded-circle mr-3 mt-1"
+                                style="width: 45px;">
+                            <div class="media-body">
+                                <h6>John Doe <small><i>01 Jan 2045 at 12:00pm</i></small></h6>
+                                <p>Diam amet duo labore stet elitr ea clita ipsum, tempor labore accusam ipsum et no at.
+                                    Kasd diam tempor rebum magna dolores sed sed eirmod ipsum clita, at tempor amet
+                                    ipsum diam tempor sit.</p>
+                                <button class="btn btn-sm btn-light">Reply</button>
+                                <div class="media mt-4">
+                                    <img src="/img/user.jpg" alt="Image" class="img-fluid rounded-circle mr-3 mt-1"
+                                        style="width: 45px;">
+                                    <div class="media-body">
+                                        <h6>John Doe <small><i>01 Jan 2045 at 12:00pm</i></small></h6>
+                                        <p>Diam amet duo labore stet elitr ea clita ipsum, tempor labore accusam ipsum
+                                            et no at. Kasd diam tempor rebum magna dolores sed sed eirmod ipsum clita,
+                                            at tempor amet ipsum diam tempor sit.</p>
+                                        <button class="btn btn-sm btn-light">Reply</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="bg-light rounded p-5">
@@ -77,7 +98,7 @@
 
                 <div class="col-lg-4 mt-5 mt-lg-0">
                     <div class="d-flex flex-column text-center bg-secondary rounded mb-5 py-5 px-4">
-                        <img src="/img/user.jpg" class="/img-fluid rounded-circle mx-auto mb-3" style="width: 100px;">
+                        <img src="/img/user.jpg" class="img-fluid rounded-circle mx-auto mb-3" style="width: 100px;">
                         <h3 class="text-white mb-3">John Doe</h3>
                         <p class="text-white m-0">Conset elitr erat vero dolor ipsum et diam, eos dolor lorem ipsum,
                             ipsum
@@ -128,7 +149,7 @@
                     </div>
                     <div class="mb-5">
                         <h3 class="mb-4 section-title">Recent Post</h3>
-                        dd($recent_posts)
+                        @foreach ($recent_posts as $post)
                             <div class="d-flex align-items-center border-bottom mb-3 pb-3">
                                 <img class="img-fluid rounded" src="/img/blog-1.jpg"
                                     style="width: 80px; height: 80px; object-fit: cover;" alt="">
@@ -143,8 +164,7 @@
                                     </div>
                                 </div>
                             </div>
-                        @endforeach
-
+                        @endforeach()
                     </div>
                     <div class="mb-5">
                         <img src="/img/blog-2.jpg" alt="" class="img-fluid rounded">
@@ -161,7 +181,7 @@
                         </div>
                     </div>
                     <div class="mb-5">
-                        <img src="/img/blog-3.jpg" alt="" class="/img-fluid rounded">
+                        <img src="/img/blog-3.jpg" alt="" class="img-fluid rounded">
                     </div>
                     <div>
                         <h3 class="mb-4 section-title">Plain Text</h3>
