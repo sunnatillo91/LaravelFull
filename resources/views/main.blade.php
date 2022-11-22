@@ -18,7 +18,7 @@
                         <div class="p-5" style="width: 100%; max-width: 900px;">
                             <h5 class="text-primary text-uppercase mb-md-3">Cleaning Services</h5>
                             <h1 class="display-3 text-white mb-md-4">Best Quality Solution In Cleaning</h1>
-                            <a href="" class="btn btn-primary">Get A Quote</a>
+                            <a href="" class="btn btn-primary">Post yaratish</a>
                         </div>
                     </div>
                 </div>
@@ -28,7 +28,7 @@
                         <div class="p-5" style="width: 100%; max-width: 900px;">
                             <h5 class="text-primary text-uppercase mb-md-3">Cleaning Services</h5>
                             <h1 class="display-3 text-white mb-md-4">Highly Professional Cleaning Services</h1>
-                            <a href="" class="btn btn-primary">Get A Quote</a>
+                            <a href="" class="btn btn-primary">Post yaratish</a>
                         </div>
                     </div>
                 </div>
@@ -38,7 +38,7 @@
                         <div class="p-5" style="width: 100%; max-width: 900px;">
                             <h5 class="text-primary text-uppercase mb-md-3">Cleaning Services</h5>
                             <h1 class="display-3 text-white mb-md-4">Experienced & Expert Cleaners</h1>
-                            <a href="" class="btn btn-primary">Get A Quote</a>
+                            <a href="" class="btn btn-primary">Post yaratish</a>
                         </div>
                     </div>
                 </div>
