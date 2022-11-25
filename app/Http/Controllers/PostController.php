@@ -45,7 +45,7 @@ class PostController extends Controller
 
         // $path = $request->file('photo')->store('post-photos', 'local');     // faqat laravelda ko'rish mumkin
 
-        if($request->hasFile('photo')){
+        if ($request->hasFile('photo')) {
             $name = $request->file('photo')->getClientOriginalName();
             $path = $request->file('photo')->storeAs('post-photos', $name);
         }
@@ -92,8 +92,28 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update()
+
+     
+    public function update(StorePostRequest $request, Post $post)
     {
+        if ($request->hasFile('photo')) {
+            
+            if (isset($post->photo)) {
+                Storage::delete($post->photo);
+            }
+
+            $name = $request->file('photo')->getClientOriginalName();
+            $path = $request->file('photo')->storeAs('post-photos', $name);
+        }
+
+        $post->update([
+            'title' => $request->title,
+            'short_content' => $request->short_content,
+            'content' => $request->content,
+            'photo' => $path ?? $post->photo
+        ]);
+
+        return redirect()->route('posts.show', ['post' => $post->id]);
     }
 
     /**
@@ -102,8 +122,10 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Post $post)
     {
-        //
+        $post->delete();
+
+        return redirect()->route('posts.index');
     }
 }

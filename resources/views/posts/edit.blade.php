@@ -1,67 +1,59 @@
 <x-layouts.main>
     <x-slot:title>
-        Postni o'zgartirish #{{ $post -> id }}
+        Postni o'zgartirish #{{ $post->id }}
     </x-slot:title>
 
     <x-page-header>
-        Postni o'zgartirish #{{ $post -> id }}
+        Postni o'zgartirish #{{ $post->id }}
     </x-page-header>
 
     <div class="container">
         <div class=" w-50 py-4">
             <div class="contact-form">
                 <div id="success"></div>
-                {{-- @if ($errors->any())
-                    <div class="alert alert-danger">
-                        <ul>
-                            @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                    </div>
-                @endif --}}
-                <form action="{{ route('posts.store') }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('posts.update', ['post' => $post->id]) }}" method="POST"
+                    enctype="multipart/form-data">
+                    @method('PUT')
                     @csrf
-                    <div class="form-row">
-                        <div class="col-sm-6 control-group mb-4">
-                            <input type="text" class="form-control p-4" name="title" placeholder="Sarlavha"
-                                required="required" data-validation-required-message="Please enter your name" />
-                            @error('title')
-                                <p class="help-block text-danger">{{ $message }}</p>
-                            @enderror
-                        </div>
-                        <div class="col-sm-6 control-group mb-4">
-                            <input name="photo" type="file" class="form-control p-4" id="subject"
-                                placeholder="Rasm" />
-                            @error('photo')
-                                <p class="help-block text-danger">{{ $message }}</p>
-                            @enderror
-                        </div>
-                    </div>
                     <div class="control-group mb-4">
-                        <input type="text" class="form-control p-4" name="short_content"
-                            placeholder="Qisqacha mazmuni" required="required"
-                            data-validation-required-message="Please enter a subject" />
-                        @error('short_content')
+                        <input type="text" class="form-control p-4" name="title" value="{{ $post->title }}"
+                            placeholder="Sarlavha" />
+                        @error('title')
                             <p class="help-block text-danger">{{ $message }}</p>
                         @enderror
                     </div>
-                    <div class="control-group mb-4">
-                        <textarea class="form-control p-4" rows="6" name="content" placeholder="Maqola" required="required"
-                            data-validation-required-message="Please enter your message"></textarea>
-                        @error('content')
+                    <div class="col-sm-6 control-group mb-4">
+                        <input name="photo" type="file" class="form-control p-4" id="subject"
+                            placeholder="Rasm" />
+                        @error('photo')
                             <p class="help-block text-danger">{{ $message }}</p>
                         @enderror
                     </div>
-                    <div>
-                        <button class="btn btn-primary btn-block py-3 px-5" type="submit">
-                            Saqlash
-                        </button>
-                    </div>
-                </form>
             </div>
-            {{-- </div> --}}
+            <div class="control-group mb-4">
+                <textarea class="form-control p-4" rows="3" name="short_content" placeholder="Qisqacha mazmuni">{{ $post->short_content }}</textarea>
+                @error('short_content')
+                    <p class="help-block text-danger">{{ $message }}</p>
+                @enderror
+            </div>
+            <div class="control-group mb-4">
+                <textarea class="form-control p-4" rows="6" name="content" placeholder="Maqola">{{ $post->content }}</textarea>
+                @error('content')
+                    <p class="help-block text-danger">{{ $message }}</p>
+                @enderror
+            </div>
+            <div>
+                <button class="btn btn-success btn-block py-3 px-5" type="submit">
+                    Saqlash
+                </button>                
+                <a href="{{ route('posts.show', ['post' => $post->id]) }}" class="btn btn-danger btn-block py-3 px-5">
+                    Bekor qilish
+                </a>
+            </div>
+            </form>
         </div>
+        {{-- </div> --}}
+    </div>
     </div>
 
 </x-layouts.main>
