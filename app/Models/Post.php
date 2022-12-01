@@ -8,9 +8,9 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Post extends Model
 {
-    use HasFactory, SoftDeletes;
+    use HasFactory;     //SoftDeletes ham ishlatilsa o'chirilgan ma'lumot korzinkada qoladi
 
-    protected $fillable = ['title', 'content', 'short_content', 'photo'];  // to'ldirishi shart ustunlar
+    protected $fillable = ['title', 'content', 'short_content'];  // to'ldirishi shart ustunlar
 
     protected $guarded = ['id'];
 }

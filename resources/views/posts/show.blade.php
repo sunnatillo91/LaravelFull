@@ -20,7 +20,8 @@
                             href="{{ route('posts.edit', ['post' => $post->id]) }}">
                             Yangilash
                         </a>
-                        <form action="{{ route('posts.destroy', ['post' => $post->id]) }}" method="POST">
+                        <form action="{{ route('posts.destroy', ['post' => $post->id]) }}" method="POST"
+                            onsubmit="return confirm('Formani rostdan o\'chirmoqchimisiz?');">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-sm btn-outline-danger">

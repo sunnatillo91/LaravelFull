@@ -18,13 +18,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/welcome', [PageController::class, 'welcome']);
+Route::get('/', [PageController::class, 'main']);
 
 Route::view('salom', 'salom');
 Route::get('about', [PageController::class, 'about'])->name('about');
 Route::get('services', [PageController::class, 'services'])->name('services');
 Route::get('projects', [PageController::class, 'projects'])->name('projects');
 Route::get('contact', [PageController::class, 'contact'])->name('contact');
+
+Route::resource('posts', PostController::class);
 
 // Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
 // Route::get('/posts/{post}', [PostController::class, 'show'])->name('posts.show');
@@ -34,7 +36,6 @@ Route::get('contact', [PageController::class, 'contact'])->name('contact');
 // Route::put('/posts/{edit}', [PostController::class, 'update'])->name('posts.update');
 // Route::delete('/posts/{post}/destroy', [PostController::class, 'destroy'])->name('posts.destroy');
 
-Route::resource('posts', PostController::class);
 
 // Route::get('users', [UserController::class, 'name']);Route::get('/', [PageController::class, 'main']);
 
