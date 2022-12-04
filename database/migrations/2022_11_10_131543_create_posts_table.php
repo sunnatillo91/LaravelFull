@@ -19,7 +19,7 @@ return new class extends Migration
             $table->text('title');
             $table->text('content');
             $table->text('short_content')->nullable();
-            $table->string('photo')->default('/avatar.png');
+            $table->string('photo')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

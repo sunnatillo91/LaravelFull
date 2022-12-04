@@ -11,6 +11,7 @@ class Post extends Model
     use HasFactory;     //SoftDeletes ham ishlatilsa o'chirilgan ma'lumot korzinkada qoladi
 
     protected $fillable = [
+    'user_id',
     'title', 
     'content', 
     'short_content',
