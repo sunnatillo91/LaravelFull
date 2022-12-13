@@ -15,20 +15,22 @@ class PostSeeder extends Seeder
      */
     public function run()
     {
-        Post::create([
-            'user_id' => 1,
-            'title' => 'Sarlavha',
-            'short_content' => 'qisqacha mazmun',
-            'content' => 'mavzu',
-            'photo' => null,
-        ]);
+        Post::factory()->count(120)->create(); 
+
+        // Post::create([
+        //     'user_id' => 1,
+        //     'title' => 'Sarlavha',
+        //     'short_content' => 'qisqacha mazmun',
+        //     'content' => 'mavzu',
+        //     'photo' => null,
+        // ]);
         
-        Post::create([
-            'user_id' => 1,
-            'title' => 'Sarlavha',
-            'short_content' => 'qisqacha mazmun',
-            'content' => 'mavzu',
-            'photo' => null,
-        ]);
+        // Post::create([
+        //     'user_id' => 1,
+        //     'title' => 'Sarlavha',
+        //     'short_content' => 'qisqacha mazmun',
+        //     'content' => 'mavzu',
+        //     'photo' => null,
+        // ]);
     }
 }
