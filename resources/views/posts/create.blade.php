@@ -16,13 +16,23 @@
                     @csrf
                     <div class="form-row">
                         <div class="col-sm-6 control-group mb-4">
-                            <input type="text" class="form-control p-4" name="title" value="{{ old('title') }}" placeholder="Sarlavha"/>
+                            <input type="text" class="form-control p-4" name="title" value="{{ old('title') }}"
+                                placeholder="Sarlavha" />
                             @error('title')
                                 <p class="help-block text-danger">{{ $message }}</p>
                             @enderror
                         </div>
                         <div class="col-sm-6 control-group mb-4">
-                            <input name="photo" type="file" class="form-control p-4" id="subject" placeholder="Rasm" />
+                            <select name="category_id">
+                                <option value="">Kategoriyani tanlang</option>
+                                @foreach ($categories as $category)
+                                    <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="col-sm-6 control-group mb-4">
+                            <input name="photo" type="file" class="form-control p-4" id="subject"
+                                placeholder="Rasm" />
                             @error('photo')
                                 <p class="help-block text-danger">{{ $message }}</p>
                             @enderror

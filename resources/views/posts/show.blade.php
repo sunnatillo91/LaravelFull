@@ -38,6 +38,11 @@
                             <a class="text-secondary text-uppercase font-weight-medium"
                                 href="">{{ $post->created_at }}</a>
                         </div>
+                        <div class="d-flex mb-2">
+                            <a class="bg-secondary font-weight-medium mb-1 py-1 px-4">{{ $post->category->name}}</a>
+                            <span class="text-primary px-2">|</span>
+                        </div>
+
                         <h1 class="section-title mb-3">{{ $post->title }}</h1>
                     </div>
 
@@ -55,7 +60,8 @@
                                 <img src="/img/user.jpg" alt="Image" class="img-fluid rounded-circle mr-3 mt-1"
                                     style="width: 45px;">
                                 <div class="media-body">
-                                    <h6>{{ $comment->user->name }} <small><i>{{ $comment->created_at }}</i></small></h6>
+                                    <h6>{{ $comment->user->name }} <small><i>{{ $comment->created_at }}</i></small>
+                                    </h6>
                                     <p>{{ $comment->body }}</p>
                                     {{-- <button class="btn btn-sm btn-light">Reply</button> --}}
                                 </div>
@@ -159,6 +165,12 @@
                                         <small class="text-primary px-2">|</small>
                                         <small><a class="text-secondary text-uppercase font-weight-medium"
                                                 href="">Cleaning</a></small>
+                                    </div>
+
+                                    <div class="d-flex mb-2">
+                                        <a
+                                            class="d-flex flex-column text-center bg-secondary rounded mb-3 py-5 px-4">{{ $post->category->name }}</a>
+                                        <span class="text-primary px-2">|</span>
                                     </div>
                                 </div>
                             </div>

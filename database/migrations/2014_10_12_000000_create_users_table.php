@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('password');
             $table->text('photo')->nullable();
             $table->rememberToken();
+            $table->timestamp('deleted_at')->nullable();
             $table->timestamps();
             // $table->softDeletes();
         });
