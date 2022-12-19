@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StorePostRequest;
 use App\Models\Category;
 use App\Models\Post;
+use App\Models\Tag;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
@@ -32,6 +33,7 @@ class PostController extends Controller
     {
         return view('posts.create')->with([
             'categories' => Category::all(),
+            'tags' =>Tag::all(),
         ]);
     }
 
@@ -43,6 +45,7 @@ class PostController extends Controller
      */
     public function store(StorePostRequest $request)
     {
+
         // $path = $request->file('photo')->storeAs('post-photos', 'file-name.jpg');  // post-photos/photo.jpg
         // $path = Storage::putFile('photo', $request->file('post-photos'));
 
@@ -62,6 +65,13 @@ class PostController extends Controller
             'content' => $request->content,
             'photo' => $path ?? null
         ]);
+
+        if(isset($request->tags)){
+            foreach ($request->tags as $tag) {
+                $post->tags()->attach($tag);
+            }
+        }
+
         return redirect()->route('posts.index');
     }
 

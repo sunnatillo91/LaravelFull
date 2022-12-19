@@ -23,10 +23,19 @@
                             @enderror
                         </div>
                         <div class="col-sm-6 control-group mb-4">
+                            <label>Kategoriya</label>
                             <select name="category_id">
                                 <option value="">Kategoriyani tanlang</option>
                                 @foreach ($categories as $category)
                                     <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="col-sm-6 control-group mb-4">
+                            <label>taglar</label>
+                            <select name="tags[]" multiple>
+                                @foreach ($tags as $tag)
+                                    <option value="{{ $tag->id }}">{{ $tag->name }}</option>
                                 @endforeach
                             </select>
                         </div>

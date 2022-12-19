@@ -39,7 +39,7 @@
                                 href="">{{ $post->created_at }}</a>
                         </div>
                         <div class="d-flex mb-2">
-                            <a class="bg-secondary font-weight-medium mb-1 py-1 px-4">{{ $post->category->name}}</a>
+                            <a class="bg-secondary font-weight-medium px-2 py-1 rounded text-white">{{ $post->category->name}}</a>
                             <span class="text-primary px-2">|</span>
                         </div>
 
@@ -169,7 +169,7 @@
 
                                     <div class="d-flex mb-2">
                                         <a
-                                            class="d-flex flex-column text-center bg-secondary rounded mb-3 py-5 px-4">{{ $post->category->name }}</a>
+                                            class="bg-secondary font-weight-medium px-2 py-1 rounded text-white">{{ $post->category->name }}</a>
                                         <span class="text-primary px-2">|</span>
                                     </div>
                                 </div>
