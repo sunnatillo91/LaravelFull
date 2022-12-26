@@ -1,10 +1,10 @@
 <x-layouts.main>
     <x-slot:title>
-        Aloqa
+        Bog'lanish
     </x-slot:title>
 
    <x-page-header>
-        Aloqa
+        Bog'lanish
    </x-page-header>
 
        <!-- Contact Start -->
