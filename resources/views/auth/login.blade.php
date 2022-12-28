@@ -25,7 +25,7 @@
                                     id="forgot" class="font-weight-bold">Parolni unutdingizmi?</a> </div>
                             <button type="submit" class="btn btn-primary btn-block mt-3">Kirish</button>
                             <div class="text-center pt-4 text-muted">Ro'yxatdan o'tmaganmisiz?
-                                <a href="#">Ro'yxatdan o'tish</a>
+                                <a href="{{ route('register') }}">Ro'yxatdan o'tish</a>
                             </div>
                         </form>
                     </div>
