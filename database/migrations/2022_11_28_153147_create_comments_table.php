@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             // $table->unsignedBigInteger('post_id');
             // $table->foreign('post_id')->references('id')->on('posts'); quyidagi 1 qator kod shu 2 qatorni vazifasini bajaradi
-            $table->foreignId('post_id')->constrained();
+            $table->foreignId('post_id')->constrained()->onDelete('cascade');
             $table->foreignId('user_id')->constrained();
             $table->text('body');
             $table->timestamps();
