@@ -19,6 +19,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+#WebsiteCheck
+Route::post('/website', 'WebsiteController@checkStatus')->name('website.checkStatus');
 
 Route::get('/', [PageController::class, 'main'])->name('main');
 
