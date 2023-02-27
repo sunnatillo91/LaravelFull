@@ -2,17 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
     public function index()
     {
+        return User::all();
         // return response("Bu userlarni ro'yxati", 201);
-        return response()->json([
-            'name' => 'Abcd',
-            'state' => 'JA',
-        ]);
+        // return response()->json([
+        //     'name' => 'Abcd',
+        //     'state' => 'JA',
+        // ]);
     }
 
     public function show($user)
